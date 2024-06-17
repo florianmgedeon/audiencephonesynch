@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Player</title>
+    <style>
+        #myVideo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <video id="myVideo" preload="auto">
+        <source src="video.mp4" type="video/mp4">
+        Ihr Browser unterstützt das Video-Tag nicht.
+    </video>
+
+    <script>
+        setInterval(function() {
+            if (localStorage.getItem('playVideo') === 'true') {
+                document.getElementById('myVideo').play();
+                localStorage.setItem('playVideo', 'false');
+            }
+        }, 1000);
+
+        myVideo.addEventListener('ended', function() {
+            localStorage.setItem('playVideo', 'false');
+        });
+    </script>
+</body>
+</html>

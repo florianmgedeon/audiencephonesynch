@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Control Page</title>
+</head>
+<body>
+    <button id="goButton">GO</button>
+
+    <script>
+        document.getElementById('goButton').addEventListener('click', function() {
+            localStorage.setItem('playVideo', 'true');
+        });
+    </script>
+</body>
+</html>
